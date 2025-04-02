@@ -1,1 +1,3 @@
 # AdikeBesaya
+
+Raw static website
