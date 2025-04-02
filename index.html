@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adike Besaya Fertilizers - Specialized Nutrition for Areca Palms</title>
+    <meta name="description" content="Adike Besaya provides high-quality, scientifically formulated fertilizers specifically designed for areca palm health and maximum nut yield. Based in Karnataka, India.">
+    <meta name="keywords" content="adike besaya, areca fertilizer, areca nut fertilizer, areca palm nutrition, fertilizer company india, karnataka fertilizer, plant nutrition, yield booster">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        /* Updated CDN link for Lucide font */
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-size: 1.25rem; /* Adjust size as needed */
+        line-height: 1;
+        display: inline-block; /* Helps with alignment */
+        vertical-align: middle; /* Aligns icon with text */
+      }
+      html {
+        scroll-behavior: smooth; /* Enable smooth scrolling */
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Prevent horizontal scrollbar caused by some AOS animations */
+        overflow-x: hidden;
+        background-color: #F5F5F5; /* Ensure body background matches light theme */
+        color: #374151; /* Default text color (Tailwind gray-700) */
+      }
+      /* Optional: Add a bit more delay between staggered items */
+      [data-aos][data-aos-delay="100"] { transition-delay: .1s; }
+      [data-aos][data-aos-delay="200"] { transition-delay: .2s; }
+      [data-aos][data-aos-delay="300"] { transition-delay: .3s; }
+
+      /* Style for the Three.js container */
+      #threejs-canvas-container {
+        width: 100%;
+        height: 400px; /* Adjust height as needed */
+        position: relative; /* Needed for potential overlays or absolute positioning within */
+        border-radius: 0.5rem; /* Match other rounded corners */
+        overflow: hidden; /* Ensure canvas doesn't bleed out */
+        background-color: #e2e8f0; /* A light gray background for the canvas area (Tailwind slate-200) */
+      }
+      #threejs-canvas-container canvas {
+          display: block; /* Prevent extra space below canvas */
+      }
+      /* Focus styles for better accessibility */
+      :focus-visible {
+          outline: 2px solid #F4A460; /* Use secondary color for outline */
+          outline-offset: 2px;
+          border-radius: 2px;
+      }
+      /* Skip link for accessibility */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #228B22; /* Primary color */
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+
+    </style>
+    <script>
+        // Tailwind Configuration (Inline config for CDN)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#228B22', // Forest Green
+                        secondary: '#F4A460', // Sandy Brown
+                        accent: '#8FBC8F', // Dark Sea Green
+                        light: '#F5F5F5', // White Smoke (Used for body background)
+                        'text-default': '#374151', // Tailwind gray-700
+                        'text-muted': '#6b7280', // Tailwind gray-500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+        // Define colors for Three.js based on Tailwind config
+        // Storing hex values directly for Three.js usage
+        const themeColors = {
+            primary: 0x228B22,
+            secondary: 0xF4A460,
+            accent: 0x8FBC8F,
+            light: 0xF5F5F5,
+            dark: 0x333333
+        };
+    </script>
+</head>
+<body class="bg-light text-text-default">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center" aria-label="Main Navigation">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <span class="lucide mr-2" aria-hidden="true">&#xea19;</span> Adike Besaya
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-text-muted hover:text-primary transition duration-300">Home</a>
+                <a href="#about" class="text-text-muted hover:text-primary transition duration-300">About Us</a>
+                <a href="#products" class="text-text-muted hover:text-primary transition duration-300">Products</a>
+                <a href="#why-us" class="text-text-muted hover:text-primary transition duration-300">Why Choose Us</a>
+                <a href="#visualizing-growth" class="text-text-muted hover:text-primary transition duration-300">Visualization</a>
+                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-green-700 transition duration-300 text-sm font-medium">Contact Us</a>
+            </div>
+            <button id="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-text-muted hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded">
+                <span class="lucide text-2xl">&#xf0c9;</span> </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white border-t border-gray-200" role="menu" aria-orientation="vertical" aria-labelledby="mobile-menu-button">
+             <a href="#home" role="menuitem" class="block py-2 text-text-default hover:text-primary transition duration-300">Home</a>
+             <a href="#about" role="menuitem" class="block py-2 text-text-default hover:text-primary transition duration-300">About Us</a>
+             <a href="#products" role="menuitem" class="block py-2 text-text-default hover:text-primary transition duration-300">Products</a>
+             <a href="#why-us" role="menuitem" class="block py-2 text-text-default hover:text-primary transition duration-300">Why Choose Us</a>
+             <a href="#visualizing-growth" role="menuitem" class="block py-2 text-text-default hover:text-primary transition duration-300">Visualization</a>
+             <a href="#contact" role="menuitem" class="block mt-2 bg-primary text-white px-4 py-2 rounded-full text-center hover:bg-green-700 transition duration-300">Contact Us</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section id="home" aria-labelledby="hero-heading" class="bg-gradient-to-r from-green-100 via-accent to-green-100 pt-20 pb-16 text-center overflow-hidden">
+            <div class="container mx-auto px-6">
+                <img src="https://placehold.co/800x400/228B22/FFFFFF?text=Healthy+Areca+Palms" alt="Lush green areca palms in a plantation, representing healthy growth." class="mx-auto mb-8 rounded-lg shadow-lg w-full max-w-3xl h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x400/cccccc/333333?text=Image+Not+Available';" data-aos="zoom-in" data-aos-duration="1000">
+                <h1 id="hero-heading" class="text-4xl md:text-5xl font-bold text-primary mb-4" data-aos="fade-up" data-aos-delay="100">Unlock the Potential of Your Areca Palms</h1>
+                <p class="text-lg md:text-xl text-text-muted mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Specialized fertilizers scientifically formulated for optimal areca nut yield and plant health.</p>
+                <a href="#products" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-500 transition duration-300 shadow-md inline-block" data-aos="fade-up" data-aos-delay="300">Explore Our Products</a>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading" class="py-16 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                 <h2 id="about-heading" class="text-3xl font-bold text-center text-primary mb-10" data-aos="fade-up">About Adike Besaya</h2>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://placehold.co/600x400/8FBC8F/FFFFFF?text=Our+Expert+Team" alt="A diverse group of agricultural experts collaborating." class="rounded-lg shadow-md w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Available';">
+                    </div>
+                    <div class="md:w-1/2 text-text-muted text-lg space-y-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                         <p>Adike Besaya was founded by agricultural experts passionate about areca nut cultivation. We saw a need for specialized nutrient solutions tailored specifically to the unique requirements of areca palms.</p>
+                        <p>Our mission is to empower areca farmers with high-quality, effective fertilizers that enhance yield, improve nut quality, and promote long-term soil health. We combine scientific research with practical farming knowledge to develop our products.</p>
+                        <p>We are committed to sustainable practices and supporting the prosperity of the areca farming community in Karnataka and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" aria-labelledby="products-heading" class="py-16 bg-light overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 id="products-heading" class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Our Areca Fertilizer Range</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="0">
+                        <img src="https://placehold.co/400x300/228B22/FFFFFF?text=Areca+Growth+Booster" alt="Bag of Areca Growth Booster fertilizer." class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/333333?text=Fertilizer+Bag';">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Areca Growth Booster</h3>
+                        <p class="text-text-muted mb-4 flex-grow">Formulated for young palms and vegetative growth stages. Rich in nitrogen and essential micronutrients.</p>
+                        <a href="#contact" class="mt-auto text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-green-700 transition duration-300 text-sm font-medium">Learn More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x300/F4A460/FFFFFF?text=Areca+Yield+Maximizer" alt="Bag of Areca Yield Maximizer fertilizer." class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/333333?text=Fertilizer+Bag';">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Areca Yield Maximizer</h3>
+                        <p class="text-text-muted mb-4 flex-grow">Balanced NPK ratio with enhanced potassium and boron for improved flowering and nut development.</p>
+                        <a href="#contact" class="mt-auto text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-green-700 transition duration-300 text-sm font-medium">Learn More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x300/8FBC8F/FFFFFF?text=Areca+Soil+Conditioner" alt="Bag of Areca Soil Conditioner fertilizer." class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/333333?text=Fertilizer+Bag';">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Areca Soil Conditioner</h3>
+                        <p class="text-text-muted mb-4 flex-grow">Organic-based formula to improve soil structure, water retention, and nutrient uptake for long-term palm health.</p>
+                        <a href="#contact" class="mt-auto text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-green-700 transition duration-300 text-sm font-medium">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" aria-labelledby="why-us-heading" class="py-16 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                 <h2 id="why-us-heading" class="text-3xl font-bold text-center text-primary mb-12" data-aos="fade-up">Why Choose Adike Besaya?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6" data-aos="zoom-in-up" data-aos-delay="0">
+                        <span class="lucide text-secondary text-4xl mb-4" aria-hidden="true">&#xea19;</span> <h3 class="text-xl font-semibold text-primary mb-2">Areca Specialization</h3>
+                        <p class="text-text-muted">Our products are specifically designed for the unique nutritional needs of areca palms, unlike generic fertilizers.</p>
+                    </div>
+                    <div class="p-6" data-aos="zoom-in-up" data-aos-delay="100">
+                        <span class="lucide text-secondary text-4xl mb-4" aria-hidden="true">&#xeb48;</span> <h3 class="text-xl font-semibold text-primary mb-2">Scientifically Formulated</h3>
+                        <p class="text-text-muted">Developed based on rigorous research and soil science to ensure maximum efficacy and plant health.</p>
+                    </div>
+                    <div class="p-6" data-aos="zoom-in-up" data-aos-delay="200">
+                        <span class="lucide text-secondary text-4xl mb-4" aria-hidden="true">&#xeb9a;</span> <h3 class="text-xl font-semibold text-primary mb-2">Quality Ingredients</h3>
+                        <p class="text-text-muted">We use only high-purity, quality ingredients to guarantee consistent results and safety for your crops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizing-growth" aria-labelledby="visualization-heading" class="py-16 bg-light overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 id="visualization-heading" class="text-3xl font-bold text-center text-primary mb-10" data-aos="fade-up">Visualizing Growth</h2>
+                <p class="text-center text-text-muted mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    An abstract representation of the nutrient dynamics and growth potential our fertilizers help unlock.
+                </p>
+                <div id="threejs-canvas-container" class="mx-auto shadow-lg" data-aos="zoom-in" data-aos-delay="200" aria-label="Abstract 3D animation of pulsating spheres">
+                    <noscript>
+                        <p class="text-center p-4">JavaScript is required to view this 3D animation.</p>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading" class="py-16 bg-gradient-to-r from-green-100 via-accent to-green-100 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 id="contact-heading" class="text-3xl font-bold text-center text-primary mb-10" data-aos="fade-up">Get in Touch</h2>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-center text-text-muted mb-6">Have questions or need advice for your areca farm? Contact us today!</p>
+                    <form id="contact-form" action="#" method="POST">
+                        <div class="mb-4">
+                            <label for="name" class="block text-text-default font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required aria-required="true">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-text-default font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required aria-required="true">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-text-default font-medium mb-2">Phone (Optional)</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-text-default font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required aria-required="true"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-500 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary">Send Message</button>
+                        </div>
+                    </form>
+                    <div id="form-status" class="text-center mt-4" aria-live="polite"></div>
+                    <div class="text-center mt-8 text-text-muted">
+                        <p>Or contact us directly:</p>
+                        <p class="mt-2"><span class="lucide mr-2" aria-hidden="true">&#xe990;</span> info@adikebesaya.example.com</p> <p><span class="lucide mr-2" aria-hidden="true">&#xea8c;</span> +91-XXX-XXXXXXX</p> </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8" aria-labelledby="footer-heading">
+        <div class="container mx-auto px-6 text-center">
+             <h2 id="footer-heading" class="sr-only">Footer Navigation</h2> <nav class="mb-4" aria-label="Footer Navigation">
+                <a href="#home" class="px-3 hover:text-white">Home</a>|
+                <a href="#about" class="px-3 hover:text-white">About</a>|
+                <a href="#products" class="px-3 hover:text-white">Products</a>|
+                 <a href="#why-us" class="px-3 hover:text-white">Why Us</a>|
+                 <a href="#visualizing-growth" class="px-3 hover:text-white">Visualization</a>|
+                <a href="#contact" class="px-3 hover:text-white">Contact</a>
+            </nav>
+             <p>&copy; <span id="current-year"></span> Adike Besaya Fertilizers. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Specializing in Areca Palm Nutrition | Bengaluru, Karnataka, India</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // --- Standard Website Scripts ---
+
+        // Initialize AOS
+        try {
+            AOS.init({
+                 once: false, // Repeat animations on scroll up/down
+                 duration: 800,
+                 offset: 100,
+                 delay: 50,
+                 easing: 'ease-in-out',
+            });
+        } catch (e) {
+            console.error("AOS initialization failed:", e);
+        }
+
+
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenu.classList.toggle('hidden');
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+            });
+            // Close menu when a link inside it is clicked
+            mobileMenu.querySelectorAll('a[href^="#"]').forEach(link => { // Only close for internal links
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+        } else {
+            console.warn("Mobile menu button or panel not found.");
+        }
+
+
+        // Smooth Scrolling handled by CSS `scroll-behavior: smooth;` on <html>
+
+
+        // Set current year in footer
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            try {
+                 currentYearElement.textContent = new Date().getFullYear();
+            } catch (e) { console.error("Failed to set current year:", e)}
+        }
+
+        // Debounce function for resize handler
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() { timeout = null; if (!immediate) func.apply(context, args); };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+
+        // Contact Form Placeholder Submission Handler
+        const contactForm = document.getElementById('contact-form');
+        const formStatusDiv = document.getElementById('form-status');
+
+        if (contactForm && formStatusDiv) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+                formStatusDiv.textContent = 'Sending message... (Demo)'; // Indicate processing
+                formStatusDiv.className = 'text-center mt-4 text-blue-600';
+
+                // Simulate network delay
+                setTimeout(() => {
+                    // Display a success message
+                    formStatusDiv.textContent = 'Thank you for your message! (This is a demo)';
+                    formStatusDiv.className = 'text-center mt-4 text-green-600';
+                    // contactForm.reset(); // Optionally clear the form
+                }, 1500); // 1.5 second delay
+
+                // Hide the message after a few more seconds
+                setTimeout(() => {
+                    formStatusDiv.textContent = '';
+                    formStatusDiv.className = 'text-center mt-4';
+                }, 6500); // Hide after 5 seconds total (1.5 + 5)
+            });
+        }
+
+
+        // --- Three.js Animation Script ---
+
+        let scene, camera, renderer, spheres = [], animationFrameId = null;
+        const container = document.getElementById('threejs-canvas-container');
+        let threeJsInitialized = false; // Flag to track initialization status
+
+        function initThreeJS() {
+             // Ensure container exists and THREE is loaded
+            if (!container) {
+                console.error("Three.js container div (#threejs-canvas-container) not found!");
+                return false;
+            }
+             if (typeof THREE === 'undefined') {
+                 console.error("THREE.js library not loaded!");
+                 if(container) container.innerHTML = "<p class='text-center text-red-500 p-4'>Error: 3D library failed to load.</p>";
+                 return false;
+             }
+
+             // Clear previous canvas & animation frame if re-initializing
+             if (animationFrameId) cancelAnimationFrame(animationFrameId);
+             while (container.firstChild) container.removeChild(container.firstChild);
+
+            try {
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+                camera.position.z = 5;
+
+                renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                renderer.setPixelRatio(window.devicePixelRatio);
+                container.appendChild(renderer.domElement);
+
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                scene.add(ambientLight);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
+                directionalLight.position.set(5, 10, 7.5);
+                scene.add(directionalLight);
+
+                const geometry = new THREE.SphereGeometry(0.3, 32, 16);
+                const sphereColors = [themeColors.primary, themeColors.secondary, themeColors.accent];
+                const numSpheres = 15;
+                spheres = []; // Reset spheres array
+                for (let i = 0; i < numSpheres; i++) {
+                    const material = new THREE.MeshStandardMaterial({
+                        color: sphereColors[i % sphereColors.length],
+                        roughness: 0.4, metalness: 0.2
+                    });
+                    const sphere = new THREE.Mesh(geometry, material);
+                    sphere.position.set(
+                        (Math.random() - 0.5) * 7,
+                        (Math.random() - 0.5) * 5,
+                        (Math.random() - 0.5) * 5
+                    );
+                    sphere.userData.offset = Math.random() * Math.PI * 2;
+                    sphere.userData.baseScale = 0.8 + Math.random() * 0.4;
+                    spheres.push(sphere);
+                    scene.add(sphere);
+                }
+
+                // Add resize listener *after* successful setup
+                window.removeEventListener('resize', onWindowResizeDebounced); // Remove previous before adding
+                window.addEventListener('resize', onWindowResizeDebounced, false);
+                onWindowResize(); // Call initially
+
+                return true; // Success
+
+            } catch (error) {
+                 console.error("Error setting up Three.js scene:", error);
+                 if(container) container.innerHTML = "<p class='text-center text-red-500 p-4'>Could not initialize 3D visualization.</p>";
+                 return false; // Failure
+            }
+        }
+
+        function onWindowResize() {
+            // Check if essential components exist before proceeding
+            if (!camera || !renderer || !container || !container.clientWidth || !container.clientHeight) return;
+            // Check for zero dimensions which can cause errors
+            if (container.clientWidth === 0 || container.clientHeight === 0) return;
+
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+        // Create a debounced version of the resize handler for the event listener
+        const onWindowResizeDebounced = debounce(onWindowResize, 150);
+
+
+        function animate() {
+            // Stop animation if renderer is removed or scene/camera are missing
+            if (!renderer || !scene || !camera) {
+                 if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                 animationFrameId = null;
+                 console.log("Animation stopped: Renderer or Scene/Camera missing.");
+                 return;
+            }
+            animationFrameId = requestAnimationFrame(animate);
+
+            if (spheres.length === 0) return; // Don't process if no spheres
+
+            const time = Date.now() * 0.0015;
+            spheres.forEach(sphere => {
+                const scaleMultiplier = 1 + Math.sin(time + sphere.userData.offset) * 0.15;
+                const currentScale = sphere.userData.baseScale * scaleMultiplier;
+                sphere.scale.set(currentScale, currentScale, currentScale);
+                sphere.rotation.y += 0.003;
+            });
+
+            try {
+                renderer.render(scene, camera);
+            } catch (e) {
+                console.error("Error during Three.js rendering:", e);
+                // Optionally stop animation on render error
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOM fully loaded and parsed. Initializing non-visual scripts.");
+            // Mobile menu, footer year, form listeners are already set up above or can be moved here
+        });
+
+        window.onload = function () {
+            console.log("Window fully loaded. Initializing visual scripts (AOS, Three.js).");
+            threeJsInitialized = initThreeJS(); // Initialize Three.js scene
+            if(threeJsInitialized) {
+                animate();     // Start the animation loop ONLY if initialization succeeded
+            }
+
+            // Combined Debounced Resize Handler for AOS & Three.js
+             var refreshVisuals = debounce(function() {
+                 console.log('Debounced resize triggered.');
+                 try {
+                     AOS.refresh(); // Refresh AOS positions
+                 } catch(e) { console.error("AOS refresh failed on resize:", e); }
+
+                 if (threeJsInitialized) { // Only resize Three.js if it was initialized successfully
+                    onWindowResize(); // Resize Three.js canvas
+                 }
+             }, 250);
+
+             // Remove potentially duplicated listeners before adding
+             window.removeEventListener('resize', refreshVisuals);
+             window.addEventListener('resize', refreshVisuals);
+        }
+
+    </script>
+
+</body>
+</html>
